@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+    int n , seek =0  , diff , i , head;
+    int req[20];
+    printf("Enter total no of request:");
+    scanf("%d",&n);
+    printf("Enter request in queue");
+    for(i=0;i<n;i++){
+        scanf("%d",&req[i]);
+    }
+    printf("Enter the head position ");
+    scanf("%d",&head);
+    
+    for(i=0;i<n;i++)
+    {
+        diff=req[i]-head;
+        if(diff<0){
+            diff=-diff;
+        }
+        seek+=diff;
+        printf("%d\t%d",req[i], diff);
+        head=req[i];
+    }
+    printf("%d",seek);
+    
+}
